@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="2 Sips Matcha — premium ceremonial-grade matcha for your daily ritual. Join the waitlist."
+    />
+    <title>2 Sips Matcha — Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>" />
+  </head>
+  <body>
+    <div class="bg-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <header class="site-header">
+      <a href="/" class="logo" aria-label="2 Sips Matcha home">
+        <span class="logo-mark">2</span>
+        <span class="logo-text">Sips Matcha</span>
+      </a>
+      <a href="#waitlist" class="header-cta">Join waitlist</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Premium ceremonial matcha · launching soon</p>
+          <h1>
+            Two sips<br />
+            <em>to slow down.</em>
+          </h1>
+          <p class="hero-lead">
+            Stone-ground, shade-grown matcha from Uji — crafted for calm mornings,
+            focused afternoons, and the quiet ritual in between.
+          </p>
+
+          <form id="waitlist-form" class="waitlist-form" novalidate>
+            <label for="email" class="sr-only">Email address</label>
+            <div class="input-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" id="submit-btn">
+                <span class="btn-label">Join the waitlist</span>
+                <span class="btn-spinner" hidden aria-hidden="true"></span>
+              </button>
+            </div>
+            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+            <p class="form-note">Be first to know when we launch. No spam, ever.</p>
+          </form>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="matcha-bowl">
+            <div class="bowl-rim"></div>
+            <div class="bowl-liquid"></div>
+            <div class="bowl-highlight"></div>
+            <div class="steam steam-1"></div>
+            <div class="steam steam-2"></div>
+            <div class="steam steam-3"></div>
+          </div>
+          <div class="leaf leaf-1"></div>
+          <div class="leaf leaf-2"></div>
+        </div>
+      </section>
+
+      <section class="features" id="about">
+        <div class="section-intro">
+          <h2>Matcha, reimagined</h2>
+          <p>Every tin tells a story of patience, shade, and stone.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🍃</div>
+            <h3>Ceremonial grade</h3>
+            <p>
+              First harvest, stone-ground to a silk-smooth powder. Vibrant color,
+              zero bitterness — just pure umami.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⛰️</div>
+            <h3>Single origin</h3>
+            <p>
+              Sourced directly from family farms in Uji, Kyoto — the birthplace of
+              Japanese matcha culture.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🤲</div>
+            <h3>Two-sip ritual</h3>
+            <p>
+              We believe the best things come in small, intentional doses. Two sips
+              is all you need to reset.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-band" id="waitlist">
+        <div class="cta-inner">
+          <h2>Your morning ritual awaits</h2>
+          <p>Join <span id="signup-count">500+</span> matcha lovers on the waitlist.</p>
+          <a href="#" class="cta-link scroll-to-form">Reserve your spot →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-brand">2 Sips Matcha</p>
+        <p class="footer-copy">&copy; 2026 2 Sips Matcha. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
