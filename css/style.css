@@ -180,12 +180,27 @@ body {
 }
 
 .eyebrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--green-sage);
   margin-bottom: 1.25rem;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  background: var(--green-deep);
+  color: var(--bg-cream);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 .hero h1 {
@@ -310,152 +325,54 @@ body {
   opacity: 0.8;
 }
 
-/* Hero visual — matcha bowl */
+/* Hero visual — product image */
 .hero-visual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 420px;
+  min-height: 420px;
+  padding: 1rem;
 }
 
-.matcha-bowl {
+.product-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(77, 107, 82, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.product-image {
   position: relative;
-  width: 280px;
-  height: 200px;
+  z-index: 1;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 28px 56px rgba(42, 63, 50, 0.2));
+  animation: float-product 6s ease-in-out infinite;
 }
 
-.bowl-rim {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  height: 90px;
-  background: linear-gradient(180deg, #d4cfc4 0%, #b8b0a2 100%);
-  border-radius: 0 0 130px 130px;
-  box-shadow: inset 0 -8px 20px rgba(0, 0, 0, 0.08), var(--shadow-soft);
-}
-
-.bowl-rim::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: -10px;
-  right: -10px;
-  height: 24px;
-  background: linear-gradient(180deg, #e8e3d8, #d4cfc4);
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.bowl-liquid {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 55px;
-  background: linear-gradient(180deg, #6b8f5e 0%, #4d6b52 60%, #3a5240 100%);
-  border-radius: 0 0 110px 110px;
-  animation: ripple 4s ease-in-out infinite;
-}
-
-.bowl-highlight {
-  position: absolute;
-  bottom: 52px;
-  left: 38%;
-  width: 60px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  filter: blur(4px);
-}
-
-@keyframes ripple {
+@keyframes float-product {
   0%,
   100% {
-    transform: translateX(-50%) scaleX(1);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) scaleX(1.02);
-  }
-}
-
-.steam {
-  position: absolute;
-  width: 8px;
-  height: 40px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
-  border-radius: 50%;
-  filter: blur(3px);
-  animation: steam-rise 3s ease-in-out infinite;
-}
-
-.steam-1 {
-  bottom: 130px;
-  left: 42%;
-  animation-delay: 0s;
-}
-
-.steam-2 {
-  bottom: 140px;
-  left: 50%;
-  animation-delay: 0.8s;
-  height: 50px;
-}
-
-.steam-3 {
-  bottom: 128px;
-  left: 58%;
-  animation-delay: 1.6s;
-}
-
-@keyframes steam-rise {
-  0% {
-    opacity: 0;
-    transform: translateY(0) scaleX(1);
-  }
-  30% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-40px) scaleX(1.5);
-  }
-}
-
-.leaf {
-  position: absolute;
-  width: 48px;
-  height: 28px;
-  background: var(--green-matcha);
-  border-radius: 0 80% 0 80%;
-  opacity: 0.6;
-  animation: leaf-drift 8s ease-in-out infinite;
-}
-
-.leaf-1 {
-  top: 20%;
-  right: 15%;
-  transform: rotate(-30deg);
-}
-
-.leaf-2 {
-  bottom: 25%;
-  left: 10%;
-  transform: rotate(20deg);
-  animation-delay: 3s;
-  opacity: 0.4;
-}
-
-@keyframes leaf-drift {
-  0%,
-  100% {
-    transform: rotate(-30deg) translateY(0);
-  }
-  50% {
-    transform: rotate(-25deg) translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 
@@ -547,6 +464,16 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
+.cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+}
+
 .cta-inner h2 {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
@@ -622,12 +549,16 @@ body {
   }
 
   .hero-visual {
-    height: 300px;
+    min-height: 280px;
     order: -1;
   }
 
-  .matcha-bowl {
-    transform: scale(0.85);
+  .product-image {
+    max-width: 280px;
+  }
+
+  .eyebrow {
+    justify-content: center;
   }
 
   .feature-grid {
