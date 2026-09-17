@@ -212,7 +212,7 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.coming-soon-badge {
+.live-badge {
   display: inline-block;
   padding: 0.3rem 0.75rem;
   background: var(--green-deep);
@@ -246,9 +246,82 @@ body {
   line-height: 1.7;
 }
 
-/* Waitlist form */
+/* Hero actions */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-deep);
+  color: var(--bg-cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--green-matcha);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--green-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  color: var(--green-matcha);
+  border-color: var(--green-matcha);
+}
+
+/* Waitlist / discount-code form */
 .waitlist-form {
   max-width: 460px;
+}
+
+.waitlist-form--inline {
+  margin: 0 auto;
+}
+
+/* This form also lives inside .cta-inner's dark gradient background —
+   the default button/message colors assume a light background, so they
+   need a lighter, higher-contrast treatment here. */
+.cta-inner .input-group button {
+  background: var(--accent-gold);
+  color: var(--green-deep);
+}
+
+.cta-inner .input-group button:hover:not(:disabled) {
+  background: var(--accent-warm);
+}
+
+.cta-inner .form-message.success {
+  color: #eaf3ea;
+}
+
+.cta-inner .form-message.error {
+  color: #ffd9d9;
+}
+
+.cta-inner .form-note {
+  color: var(--bg-cream);
+  opacity: 0.75;
 }
 
 .input-group {
@@ -642,6 +715,10 @@ body {
     margin: 0 auto;
   }
 
+  .hero-actions {
+    justify-content: center;
+  }
+
   .hero-visual {
     min-height: 280px;
     order: -1;
@@ -665,6 +742,18 @@ body {
 @media (max-width: 520px) {
   .site-header {
     padding: 1rem 1.25rem;
+  }
+
+  .header-nav {
+    gap: 0.85rem;
+  }
+
+  .header-nav-link {
+    font-size: 0.8rem;
+  }
+
+  .header-cta {
+    display: none;
   }
 
   .hero {

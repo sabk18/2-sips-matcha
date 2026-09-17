@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="2 Sips Matcha — bold ceremonial-grade matcha with rich umami flavor. Two sips — that's all you'll need. Join the waitlist."
+      content="2 Sips Matcha — bold ceremonial-grade matcha with rich umami flavor. Two sips — that's all you'll need. Shop the tin now."
     />
-    <title>2 Sips Matcha — Coming Soon</title>
+    <title>2 Sips Matcha — Ceremonial Grade Matcha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,15 @@
       </a>
       <nav class="header-nav">
         <a href="#shop" class="header-nav-link">Shop</a>
-        <a href="#waitlist" class="header-cta">Join waitlist</a>
+        <a href="#story" class="header-nav-link">Story</a>
+        <!-- TODO: confirm this against Settings -> Customer accounts in Shopify admin -->
+        <a
+          href="https://vipfpy-dt.myshopify.com/account"
+          class="header-nav-link"
+          target="_blank"
+          rel="noopener"
+        >Account</a>
+        <a href="#shop" class="header-cta">Shop now</a>
       </nav>
     </header>
 
@@ -39,7 +47,7 @@
       <section class="hero">
         <div class="hero-content">
           <p class="eyebrow">
-            <span class="coming-soon-badge">Coming soon</span>
+            <span class="live-badge">Now shipping</span>
             Ceremonial grade · 30g tin
           </p>
           <h1>
@@ -52,25 +60,10 @@
             people become matcha people.
           </p>
 
-          <form id="waitlist-form" class="waitlist-form" novalidate>
-            <label for="email" class="sr-only">Email address</label>
-            <div class="input-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@email.com"
-                autocomplete="email"
-                required
-              />
-              <button type="submit" id="submit-btn">
-                <span class="btn-label">Join the waitlist</span>
-                <span class="btn-spinner" hidden aria-hidden="true"></span>
-              </button>
-            </div>
-            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-            <p class="form-note">Launching soon. Be first in line — no spam, ever.</p>
-          </form>
+          <div class="hero-actions">
+            <a href="#shop" class="btn-primary">Shop now</a>
+            <a href="#story" class="btn-secondary">Our story</a>
+          </div>
         </div>
 
         <div class="hero-visual">
@@ -85,7 +78,7 @@
         </div>
       </section>
 
-      <section class="features" id="about">
+      <section class="features" id="story">
         <div class="section-intro">
           <h2>Why matcha hits different</h2>
           <p>Small dose. Big flavor. Everything people love about matcha — concentrated.</p>
@@ -150,12 +143,31 @@
         </div>
       </section>
 
-      <section class="cta-band" id="waitlist">
+      <section class="cta-band" id="offer">
         <div class="cta-inner">
-          <p class="cta-eyebrow">Coming soon</p>
-          <h2>Two sips. That's it.</h2>
-          <p>Join the waitlist and be the first to taste what everyone's talking about.</p>
-          <a href="#" class="cta-link scroll-to-form">Join the waitlist →</a>
+          <p class="cta-eyebrow">New here?</p>
+          <h2>Get 10% off your first order</h2>
+          <p>Join our list for a first-order discount code, early access to new drops, and the occasional excuse to drink more matcha.</p>
+
+          <form id="waitlist-form" class="waitlist-form waitlist-form--inline" novalidate>
+            <label for="email" class="sr-only">Email address</label>
+            <div class="input-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit" id="submit-btn">
+                <span class="btn-label">Get my code</span>
+                <span class="btn-spinner" hidden aria-hidden="true"></span>
+              </button>
+            </div>
+            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+            <p class="form-note">No spam — just your code and the occasional update.</p>
+          </form>
         </div>
       </section>
     </main>

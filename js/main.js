@@ -6,11 +6,9 @@
   const btnSpinner = submitBtn.querySelector(".btn-spinner");
   const formMessage = document.getElementById("form-message");
 
-  document.querySelectorAll(".scroll-to-form, .header-cta[href='#waitlist']").forEach((el) => {
+  document.querySelectorAll(".scroll-to-form").forEach((el) => {
     el.addEventListener("click", (e) => {
-      if (el.classList.contains("scroll-to-form")) {
-        e.preventDefault();
-      }
+      e.preventDefault();
       emailInput.focus({ preventScroll: false });
       emailInput.scrollIntoView({ behavior: "smooth", block: "center" });
     });
@@ -65,7 +63,7 @@
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
 
-      showMessage("You're on the list! We'll be in touch soon. 🍵", "success");
+      showMessage("Check your inbox for your code! 🍵", "success");
       form.reset();
     } catch (err) {
       showMessage(err.message || "Something went wrong. Please try again.", "error");

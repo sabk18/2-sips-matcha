@@ -1,53 +1,46 @@
 # 2 Sips Matcha
 
-Landing page with waitlist for **2 Sips Matcha** — premium ceremonial-grade matcha.
+Site for **2 Sips Matcha** — premium ceremonial-grade matcha. Static HTML/CSS/JS, deployed on Vercel at [2sipsmatcha.com](https://www.2sipsmatcha.com).
 
-## Local preview
+## Structure
 
-Open `index.html` in a browser, or serve locally:
-
-```bash
-python3 -m http.server 3000
-# visit http://localhost:3000
+```
+2-sips-matcha/
+├── index.html       # Site markup (Hero, Story, Shop, 10%-off signup)
+├── css/style.css    # Styles & brand colors
+├── js/main.js       # 10%-off email-capture form logic
+├── js/shop.js       # Shopify Buy Button embed (product/cart/checkout)
+├── api/waitlist.js  # Vercel serverless function — emails the discount code
+└── vercel.json      # Vercel config
 ```
 
-> Note: the waitlist API (`/api/waitlist`) only works when deployed to Vercel.
+## Shop / Shopify integration
 
-## Deploy to Vercel + GitHub
+The product lives in a dedicated Shopify store; the Shop section on this site embeds it via the Shopify **Buy Button** SDK (see `js/shop.js`), restyled to match the site's own palette/typography instead of Shopify's default widget look. Checkout, payments, shipping, and customer accounts are all handled by Shopify — this site itself never touches payment data.
 
-### 1. Push to GitHub
+To swap the product (new SKU, new tin size, etc.): generate a fresh Buy Button embed code in Shopify Admin (Sales channels → Buy Button), then update `PRODUCT_ID` / `NODE_ID` in `js/shop.js` and the matching `id` in `index.html`.
 
-```bash
-cd ~/Projects/2-sips-matcha
-git init
-git add .
-git commit -m "Initial landing page with waitlist"
-gh repo create 2-sips-matcha --public --source=. --push
-```
+## "Get 10% off" email capture
 
-### 2. Deploy on Vercel
-
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-2. **Add New Project** → import `2-sips-matcha`
-3. Click **Deploy** (no build settings needed — static site)
-
-Your site will be live at `https://2-sips-matcha.vercel.app` (or similar).
-
-### 3. Configure waitlist notifications (optional)
-
-Sign up at [resend.com](https://resend.com) (free tier) and add these env vars in Vercel → Project → Settings → Environment Variables:
+`api/waitlist.js` is a Vercel serverless function that, on signup, emails the visitor a discount code (via [Resend](https://resend.com), free tier) and separately notifies you of the signup. Configure these in Vercel → Project → Settings → Environment Variables:
 
 | Variable | Value |
 |----------|-------|
 | `RESEND_API_KEY` | Your Resend API key |
-| `NOTIFY_EMAIL` | Your email to receive signups |
-| `FROM_EMAIL` | Verified sender domain (use `onboarding@resend.dev` for testing) |
+| `NOTIFY_EMAIL` | Your email, to get notified of signups |
+| `FROM_EMAIL` | Verified sender (use `onboarding@resend.dev` for testing) |
+| `DISCOUNT_CODE` | The Shopify discount code to send (create it in Shopify Admin → Discounts first) |
 
-Without these, signups still succeed — they're logged in Vercel function logs.
+Without `RESEND_API_KEY` set, signups still succeed but no email actually sends — logged in Vercel function logs instead.
 
-### 4. Custom domain
+## Local preview
 
-In Vercel → Project → Settings → Domains, add your domain (e.g. `2sipsmatcha.com`).
+```bash
+python3 -m http.server 8080
+# visit http://localhost:8080
+```
+
+Note: `/api/waitlist` only works when deployed to Vercel (or run via `vercel dev` locally).
 
 ## Brand colors
 
@@ -61,14 +54,3 @@ In Vercel → Project → Settings → Domains, add your domain (e.g. `2sipsmatc
 | Warm accent | `#C4AD8A` | Links, highlights |
 
 Update `:root` variables in `css/style.css` to match your brand palette.
-
-## Project structure
-
-```
-2-sips-matcha/
-├── index.html       # Landing page
-├── css/style.css    # Styles & brand colors
-├── js/main.js       # Waitlist form logic
-├── api/waitlist.js  # Vercel serverless API
-└── vercel.json      # Vercel config
-```
