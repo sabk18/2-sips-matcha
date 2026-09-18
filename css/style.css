@@ -620,6 +620,128 @@ body {
   box-shadow: var(--shadow-card);
 }
 
+/* Shop gallery — swipeable product images */
+.shop-gallery {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-cream);
+  box-shadow: var(--shadow-card);
+}
+
+.shop-gallery-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.shop-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.shop-gallery-track.is-dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
+
+.shop-gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.shop-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  color: var(--green-deep);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.gallery-arrow:hover {
+  background: var(--green-deep);
+  color: var(--bg-cream);
+}
+
+.gallery-arrow--prev {
+  left: 0.75rem;
+}
+
+.gallery-arrow--next {
+  right: 0.75rem;
+}
+
+.gallery-arrow[hidden] {
+  display: none;
+}
+
+.shop-gallery-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.shop-gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 1px rgba(42, 63, 50, 0.15);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.shop-gallery-dot.is-active {
+  background: var(--green-deep);
+  width: 18px;
+  border-radius: 999px;
+}
+
+.shop-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .shop-description p {
   font-size: 1.05rem;
   font-weight: 300;

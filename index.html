@@ -145,25 +145,56 @@
         </div>
 
         <div class="shop-inner">
-          <div class="shop-description">
-            <p>
-              Two sips — that's all you'll need. Experience concentrated,
-              ceremonial-grade matcha crafted for bold, rich flavor without the
-              bitterness. Grown in the heart of China's Ankang selenium valley —
-              high-altitude tea gardens up to 1,600 meters — our shade-grown,
-              first-harvest leaves are stone-ground into a vibrant jade powder
-              naturally rich in selenium, delivering smooth, sustained energy
-              and deep umami in every whisk.
-            </p>
-            <ul class="shop-facts">
-              <li>Ceremonial grade, first harvest</li>
-              <li>Grown in China's Ankang selenium valley, 1,200–1,600m altitude</li>
-              <li>Stone-ground, shade-grown, naturally selenium-rich</li>
-              <li>30g tin — about 15 servings</li>
-            </ul>
+          <div class="shop-gallery" id="shop-gallery">
+            <div class="shop-gallery-track" id="shop-gallery-track">
+              <div class="shop-gallery-slide">
+                <img
+                  src="/assets/shop-1-tin.webp"
+                  alt="2 Sips Matcha tin — ceremonial grade matcha, 30g"
+                  loading="lazy"
+                />
+              </div>
+              <div class="shop-gallery-slide">
+                <img
+                  src="/assets/shop-2-wood.webp"
+                  alt="2 Sips Matcha tin on a wooden counter with a spoonful of matcha and a whisked bowl"
+                  loading="lazy"
+                />
+              </div>
+              <div class="shop-gallery-slide">
+                <img
+                  src="/assets/shop-3-living-room.webp"
+                  alt="2 Sips Matcha tin on a console table at home"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <button type="button" class="gallery-arrow gallery-arrow--prev" aria-label="Previous image">‹</button>
+            <button type="button" class="gallery-arrow gallery-arrow--next" aria-label="Next image">›</button>
+            <div class="shop-gallery-dots" id="shop-gallery-dots"></div>
           </div>
 
-          <div class="shop-buy" id="product-component-1789609571788"></div>
+          <div class="shop-details">
+            <div class="shop-description">
+              <p>
+                Two sips — that's all you'll need. Experience concentrated,
+                ceremonial-grade matcha crafted for bold, rich flavor without the
+                bitterness. Grown in the heart of China's Ankang selenium valley —
+                high-altitude tea gardens up to 1,600 meters — our shade-grown,
+                first-harvest leaves are stone-ground into a vibrant jade powder
+                naturally rich in selenium, delivering smooth, sustained energy
+                and deep umami in every whisk.
+              </p>
+              <ul class="shop-facts">
+                <li>Ceremonial grade, first harvest</li>
+                <li>Grown in China's Ankang selenium valley, 1,200–1,600m altitude</li>
+                <li>Stone-ground, shade-grown, naturally selenium-rich</li>
+                <li>30g tin — about 15 servings</li>
+              </ul>
+            </div>
+
+            <div class="shop-buy" id="product-component-1789609571788"></div>
+          </div>
         </div>
       </section>
 
@@ -205,5 +236,6 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/shop.js"></script>
+    <script src="/js/gallery.js"></script>
   </body>
 </html>
