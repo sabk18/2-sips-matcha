@@ -426,6 +426,7 @@ body {
   justify-content: center;
   min-height: 420px;
   padding: 1rem;
+  perspective: 1400px;
 }
 
 .product-glow {
@@ -456,7 +457,8 @@ body {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 28px 56px rgba(42, 63, 50, 0.2));
-  animation: float-product 10s ease-in-out infinite;
+  animation: float-product 9s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 
 @keyframes float-product {
@@ -465,13 +467,13 @@ body {
     transform: translateY(0) rotateY(0deg);
   }
   25% {
-    transform: translateY(-10px) rotateY(10deg);
+    transform: translateY(-10px) rotateY(24deg);
   }
   50% {
     transform: translateY(0) rotateY(0deg);
   }
   75% {
-    transform: translateY(10px) rotateY(-10deg);
+    transform: translateY(10px) rotateY(-24deg);
   }
 }
 
