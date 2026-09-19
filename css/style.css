@@ -457,23 +457,17 @@ body {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 28px 56px rgba(42, 63, 50, 0.2));
-  animation: float-product 9s ease-in-out infinite;
+  animation: spin-product 12s linear infinite;
   transform-style: preserve-3d;
+  backface-visibility: visible;
 }
 
-@keyframes float-product {
-  0%,
-  100% {
-    transform: translateY(0) rotateY(0deg);
+@keyframes spin-product {
+  from {
+    transform: rotateX(10deg) rotateY(0deg);
   }
-  25% {
-    transform: translateY(-10px) rotateY(24deg);
-  }
-  50% {
-    transform: translateY(0) rotateY(0deg);
-  }
-  75% {
-    transform: translateY(10px) rotateY(-24deg);
+  to {
+    transform: rotateX(10deg) rotateY(360deg);
   }
 }
 
