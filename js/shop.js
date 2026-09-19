@@ -67,7 +67,7 @@
           product: {
             googleFonts: ["Outfit:400,500,600", "Cormorant Garamond:400,600"],
             contents: {
-              img: true,
+              img: false,
               title: true,
               price: true,
               options: true,
