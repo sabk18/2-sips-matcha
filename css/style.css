@@ -538,6 +538,15 @@ body {
   font-weight: 300;
 }
 
+.ritual-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
 /* Gallery */
 .gallery {
   position: relative;
