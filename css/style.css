@@ -426,7 +426,6 @@ body {
   justify-content: center;
   min-height: 420px;
   padding: 1rem;
-  perspective: 1400px;
 }
 
 .product-glow {
@@ -457,17 +456,16 @@ body {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 28px 56px rgba(42, 63, 50, 0.2));
-  animation: spin-product 12s linear infinite;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
+  animation: float-product 6s ease-in-out infinite;
 }
 
-@keyframes spin-product {
-  from {
-    transform: rotateX(10deg) rotateY(0deg);
+@keyframes float-product {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotateX(10deg) rotateY(360deg);
+  50% {
+    transform: translateY(-10px);
   }
 }
 
